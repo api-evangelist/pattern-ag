@@ -64,5 +64,19 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Pattern Ag is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Pattern Ag was a predictive-agronomy company (Emeryville, California; founded 2018) that used DNA
+sequencing and soil metagenomics to forecast pest, pathogen and nutrient-deficiency pressure a season
+ahead, through its Complete Bio and Pattern 360 products.
+
+**The brand is retired.** In August 2024 Pattern Ag merged with soil-sensing company EarthOptics; the
+combined business operates under the EarthOptics name. Verified 2026-08-26: `https://www.pattern.ag/`
+returns HTTP 301 to `https://www.earthoptics.com`, every Pattern Ag deep link probed returns 404, and
+the Pattern Ag LinkedIn page redirects to an EarthOptics company page.
+
+Pattern Ag never published a public developer portal, API reference, machine-readable contract, SDK,
+MCP server or agent card under its own domain, and none survive. The successor company's private REST
+API is profiled separately at [`all/earth-optics`](https://apis.io/providers/earth-optics/) and is
+deliberately not claimed here.
+
+- Pattern Ag (redirects): https://www.pattern.ag/
+- Successor: https://earthoptics.com/

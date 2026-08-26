@@ -1,17 +1,41 @@
 aid: pattern-ag
 name: Pattern Ag
-description: 'Pattern Ag is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Pattern Ag was a predictive-agronomy company founded in 2018 and headquartered
+  in Emeryville, California, that applied DNA sequencing and soil metagenomics to
+  forecast agronomic outcomes twelve months ahead of a growing season. Its Complete
+  Bio and Pattern 360 products profiled the soil microbiome to predict pest, pathogen
+  and nutrient-deficiency pressure, informing crop-protection, seed-selection and
+  fertility decisions for corn and soybean growers, and in 2023 the company announced
+  what it described as the world''s largest single-ecosystem metagenomics database.
+  In August 2024 Pattern Ag merged with soil-sensing company EarthOptics; the combined
+  business operates under the EarthOptics name and the Pattern Ag brand has been
+  retired. As of this profile the pattern.ag website issues an HTTP 301 to
+  www.earthoptics.com, every Pattern Ag deep link returns 404, and the Pattern Ag
+  LinkedIn page redirects to an EarthOptics company page. Pattern Ag never published
+  a public developer program, API documentation, SDKs or a machine-readable API
+  contract under its own brand, and no Pattern Ag API surface survives. The successor
+  company''s private REST API is profiled separately at all/earth-optics.'
 url: https://raw.githubusercontent.com/api-evangelist/pattern-ag/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
-specificationVersion: '0.20'
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
+specificationVersion: '0.23'
 created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Agriculture
+- AgTech
+- Soil
+- Soil Biology
+- Metagenomics
+- Predictive Agronomy
+- Precision Agriculture
+- Agronomy
+- Soil Health
+- Acquired
+- Retired Brand
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +43,56 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/pattern-ag-domain-security.yml
+- type: LLMsTxt
+  url: llms/pattern-ag-llms.txt
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.pattern.ag/
+- type: ParentCompany
+  url: https://earthoptics.com/
+- type: Blog
+  url: https://earthoptics.com/news-insights
+- type: Support
+  url: https://earthoptics.com/contact-us
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+  notes: 'Pattern Ag is an absorbed brand, not a live provider. STEP 0b contract discovery
+    ran against every reachable Pattern Ag host and against the successor host set,
+    and found no Pattern Ag contract of any kind. https://www.pattern.ag/ returns
+    HTTP 301 to https://www.earthoptics.com following the August 2024 EarthOptics
+    merger; all seven /.well-known/ paths, /llms.txt and /openapi.json on
+    www.pattern.ag return 404, and the Pattern Ag LinkedIn company page redirects
+    to an EarthOptics page. No npm, PyPI or GitHub organization exists under the
+    Pattern Ag name. The inherited Website pointer to https://www.nasdaqprivatemarket.com/
+    was a harvest-source artifact (harvest.yml line 18057 records that generic venue
+    URL for every nasdaq-sourced row) and asserted a false fact about the company;
+    it was removed and replaced with the real domain. The successor surface —
+    a private Django REST Framework API at api.earthoptics.com whose
+    drf-spectacular schema at /api/schema/ returns HTTP 401 — is deliberately NOT
+    claimed here: it is EarthOptics'' contract and is already profiled at
+    all/earth-optics. Written: domain-security probe, well-known absence record,
+    generated llms.txt.'
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Pattern Ag merged into EarthOptics in August 2024 and the brand was retired —
+    https://www.pattern.ag/ now issues an HTTP 301 to www.earthoptics.com, every
+    Pattern Ag deep link 404s, and the company never published a developer portal
+    or API contract under its own domain before the merger.
+  evidence:
+  - url: https://www.pattern.ag/
+    status: 301
+  - url: https://www.pattern.ag/about
+    status: 404
+  - url: https://www.pattern.ag/.well-known/security.txt
+    status: 404
+  - url: https://www.pattern.ag/openapi.json
+    status: 404
+  - url: https://www.linkedin.com/company/pattern-ag/
+    status: 200
+  checked: '2026-08-26'

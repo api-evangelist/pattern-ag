@@ -1,0 +1,38 @@
+generated: '2026-08-26'
+method: probed
+source: >-
+  Direct unauthenticated HTTP probes of the Pattern Ag web host on 2026-08-26.
+  Every /.well-known/ path returned HTTP 404. The pattern.ag site root itself
+  301s to https://www.earthoptics.com following the August 2024 EarthOptics
+  merger, so there is no Pattern Ag-branded surface left to serve these
+  documents. No WellKnown or SecurityTxt pointer is emitted in apis.yml,
+  because nothing was served — this file records a verified absence.
+note: >-
+  The successor company's hosts (earthoptics.com, app.earthoptics.com,
+  api.earthoptics.com) are probed in the separate all/earth-optics profile and
+  are deliberately not claimed here: documents served by EarthOptics belong to
+  EarthOptics, not to the retired Pattern Ag brand.
+hosts:
+- host: www.pattern.ag
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
